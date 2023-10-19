@@ -22,3 +22,13 @@ def load_json(fname, encoding='utf-8'):
     with open(fname, encoding=encoding) as f:
         fn = json.load(f)
     return fn
+
+def save_pkl(file, fname):
+    with open(f'./{fname}.pkl', mode='wb') as f:
+        pickle.dump(file, f)
+    print(f'Success Saving File! PATH: ./{fname}.pkl')
+
+def load_pkl(path):
+    with open(path, mode='rb') as f:
+        file = pickle.load(f)
+    return file 
