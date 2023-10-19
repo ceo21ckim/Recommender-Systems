@@ -1,5 +1,4 @@
-import json 
-
+import json, pickle
 import torch
 import numpy as np 
 
@@ -7,7 +6,6 @@ import numpy as np
 def torch2npy(tensor):
     if len(tensor.shape) == 4:
         tensor = tensor.unsqueeze(0)
-        
     npy = tensor.detach().cpu().numpy()
     return npy
 
