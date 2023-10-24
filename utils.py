@@ -1,4 +1,5 @@
 import json, pickle
+import time
 import torch
 import numpy as np 
 
@@ -30,3 +31,9 @@ def load_pkl(path):
     with open(path, mode='rb') as f:
         file = pickle.load(f)
     return file 
+
+def elapsed_time(start, end):
+    elapsed = end - start 
+    elapsed_min = elapsed // 60 
+    elapsed_sec = elapsed - elapsed_min * 60 
+    return elapsed_min, elapsed_sec 
