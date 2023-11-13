@@ -2,7 +2,13 @@ import json, pickle
 import time
 import torch
 import numpy as np 
+import yaml
 
+def load_config(config_file):
+    with open(config_file) as file:
+        config = yaml.safe_load(file)
+
+    return config
 
 def torch2npy(tensor):
     if len(tensor.shape) == 4:
